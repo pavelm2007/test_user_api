@@ -1,0 +1,8 @@
+import pytest
+
+from main.testing.mixer import mixer as _mixer
+
+
+@pytest.fixture()
+def mixer():
+    return _mixer
