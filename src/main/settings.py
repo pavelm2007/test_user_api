@@ -151,11 +151,10 @@ SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
-    # and maybe some others ...
     'django.contrib.auth.backends.ModelBackend',
 )
-SOCIAL_AUTH_VK_OAUTH2_KEY = '8054459'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = 'oxZUBnhBRko3F2O93zcD'
+SOCIAL_AUTH_VK_OAUTH2_KEY = 'XXX'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = 'XXXXXX'
 SOCIAL_AUTH_PIPELINE = (
   'social_core.pipeline.social_auth.social_details',
   'social_core.pipeline.social_auth.social_uid',
@@ -169,4 +168,7 @@ SOCIAL_AUTH_PIPELINE = (
   'social_core.pipeline.user.user_details',
 )
 
-REST_SOCIAL_OAUTH_REDIRECT_URI = '/a12n/vk/callback/'
+try:
+    from main.local_settings import *
+except ImportError:
+    pass
